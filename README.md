@@ -40,7 +40,7 @@ Built-in : socket, getservbyport, threading
 ## Installing and Running the Project  
   
 1. Clone the repo on the system by running following command:  
-        ```git clone https://github.com/Wizard-1803/Port-Scanner ```
+        ```git clone https://github.com/Wizard1803/Port-Scanner.git```
 
 2. No API keys or dependencies required. All libraries are Python built-ins. 
     Run the program from the project folder path by following command:  
