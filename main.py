@@ -1,4 +1,4 @@
-from scanner import scan_port
+from scanner import scan_port, scan_worker
 from utils import get_service_name
 import threading
 
@@ -14,18 +14,12 @@ def print_results(open_ports, ip):
     print("-" *20)
     print(f"Total no. of open Ports : {len(open_ports)}")
 
-def scan_worker(ip, port):
-    condition = scan_port(ip, port)
-    if condition == True:
-        with lock:
-            open_ports.append((port, get_service_name(port)))
-
 def main():
     ip = input("Enter Target IP Address : ")
     start_port, end_port = int(input("Starting Port : ")), int(input("Ending Port : "))
     threads = []
     for port in range(start_port, end_port+1):
-        t = threading.Thread(target=scan_worker, args=(ip, port))
+        t = threading.Thread(target=scan_worker, args=(ip, port, open_ports, lock))
         threads.append(t)
         t.start()
 
