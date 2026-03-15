@@ -5,17 +5,25 @@
 ## Project Structure
 ```
 Port_Scanner
-    |
+    |--app.py
     |--main.py
     |--scanner.py
     |--utils.py
     |--README.md
+    |--frontend/
+        |--src/
+            |--App.js
+            |--light-bg.jpg
 ```
 
 ## Tech Stack
 ```
 Python 3.12.4
-Built-in : socket, getservbyport, threading
+Built-in : socket, threading
+External : flask, flask-cors
+
+Frontend : React 18
+External : axios
 ```
 
 ## Workflow
@@ -37,14 +45,36 @@ Built-in : socket, getservbyport, threading
     \/
 6. Print_results() is called to print all the results of scanning ports of given IP Address
 ```
-## Installing and Running the Project  
+## Two ways for Installing and Running the Project  
   
+## CLI Mode
 1. Clone the repo on the system by running following command:  
         ```git clone https://github.com/Wizard1803/Port-Scanner.git```
 
 2. No API keys or dependencies required. All libraries are Python built-ins. 
     Run the program from the project folder path by following command:  
     ```python main.py```
+
+
+  
+## Web UI Mode
+
+Terminal 1 — start Flask backend:
+```
+python app.py
+```
+Terminal 2 — start React frontend:
+```
+cd frontend
+npm start
+```
+Then open `http://localhost:3000`
+
+## Install Dependencies
+```
+pip install flask flask-cors
+cd frontend && npm install
+```
 
 ## Sample Output:
 
